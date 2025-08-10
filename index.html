@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hungary – Civil & Built Environment Masters</title>
+  <meta name="description" content="Curated list of English‑taught Master’s programmes in Hungary related to Civil Engineering and the Built Environment. Search, filter, and go to official pages." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind Play CDN (fine for a small static site) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <!-- Top bar -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-white/75 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="#" class="font-bold text-xl">Study in Hungary · Civil/Geo/Infra MSc</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a class="hover:text-blue-700" href="#masters">Masters</a>
+        <a class="hover:text-blue-700 opacity-60 pointer-events-none" href="#bachelors" title="Coming soon">Bachelors (soon)</a>
+        <a class="hover:text-blue-700 opacity-60 pointer-events-none" href="#other" title="Coming soon">Other subjects (soon)</a>
+        <a class="hover:text-blue-700" href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-blue-50 to-indigo-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight">English‑taught Master’s programmes in Hungary for Civil & Built Environment</h1>
+          <p class="mt-3 text-slate-600">Quickly filter by subject, university, or city. Each card links to the official Study Finder or university page.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#masters" class="inline-flex items-center gap-2 rounded-xl bg-blue-600 text-white px-4 py-2 text-sm font-semibold shadow hover:bg-blue-700">
+              Browse Masters
+            </a>
+            <a href="#about" class="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2 text-sm font-semibold shadow border hover:bg-slate-50">
+              How to use
+            </a>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow p-4 border">
+          <ul class="text-sm text-slate-600 space-y-2">
+            <li>✓ Sources: Tempus Public Foundation Study Finder & official university pages</li>
+            <li>✓ Focus: Civil, Structural, Geo/Environmental, Transport, Geoinformatics, Infrastructure</li>
+            <li>✓ Status: Starter list · easy to extend for BSc & other subjects</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Controls -->
+  <section id="masters" class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+    <div class="mb-4 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+      <h2 class="text-2xl font-bold">Master’s Programmes (Hungary)</h2>
+      <div class="text-sm text-slate-500">Last updated: <span id="lastUpdated"></span></div>
+    </div>
+
+    <div class="grid gap-3 md:grid-cols-12">
+      <input id="q" type="search" placeholder="Search title, university, faculty, city…" class="md:col-span-6 w-full rounded-xl border px-4 py-2.5 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600" />
+      <select id="subject" class="md:col-span-2 w-full rounded-xl border px-3 py-2.5 shadow-sm">
+        <option value="">All subjects</option>
+      </select>
+      <select id="university" class="md:col-span-3 w-full rounded-xl border px-3 py-2.5 shadow-sm">
+        <option value="">All universities</option>
+      </select>
+      <button id="reset" class="md:col-span-1 rounded-xl border px-3 py-2.5 shadow-sm hover:bg-slate-100">Reset</button>
+    </div>
+
+    <div id="count" class="mt-4 text-sm text-slate-600"></div>
+
+    <div id="cards" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+  </section>
+
+  <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+    <h3 class="text-xl font-bold mb-2">About & Notes</h3>
+    <p class="text-sm text-slate-700">
+      This list was compiled from the <a class="text-blue-700 underline" href="https://tempus.tpf.hu/studyfinder/" target="_blank" rel="noopener">Study Finder</a> database of the Tempus Public Foundation and official university pages. Always verify deadlines, eligibility, and curriculum on the programme sites.
+    </p>
+  </section>
+
+  <footer class="border-t border-slate-200 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-sm text-slate-500">
+      <div>Built with a single static <code>index.html</code>. Ready for GitHub Pages.</div>
+    </div>
+  </footer>
+
+  <script>
+  // --- Data: curated programmes ---
+  const programmes = [
+    { id: 1, title: "Construction Information Technology Engineering", subject: "Construction IT", university: "Budapest University of Technology and Economics (BME)", faculty: "Faculty of Civil Engineering", city: "Budapest", url: "https://tempus.tpf.hu/studyfinder/index/show/63" },
+    { id: 2, title: "Transportation Engineering", subject: "Transportation Engineering", university: "Budapest University of Technology and Economics (BME)", faculty: "Faculty of Civil Engineering", city: "Budapest", url: "https://tempus.tpf.hu/studyfinder/index/show/57" },
+    { id: 3, title: "Structural Engineering", subject: "Structural Engineering", university: "Budapest University of Technology and Economics (BME)", faculty: "Faculty of Civil Engineering", city: "Budapest", url: "https://tempus.tpf.hu/studyfinder/index/show/55" },
+    { id: 4, title: "Engineering Management", subject: "Engineering Management", university: "Budapest University of Technology and Economics (BME)", faculty: "Faculty of Civil Engineering", city: "Budapest", url: "https://tempus.tpf.hu/studyfinder/index/show/65" },
+    { id: 5, title: "Environmental Engineering", subject: "Environmental Engineering", university: "Budapest University of Technology and Economics (BME)", faculty: "Faculty of Civil Engineering", city: "Budapest", url: "https://tempus.tpf.hu/studyfinder/index/show/44" },
+
+    { id: 6, title: "Engineering Management", subject: "Engineering Management", university: "Hungarian University of Agriculture and Life Sciences (MATE)", faculty: "Institute of Technology", city: "Gödöllő", url: "https://tempus.tpf.hu/studyfinder/index/show/254" },
+    { id: 7, title: "Environmental Engineering", subject: "Environmental Engineering", university: "Hungarian University of Agriculture and Life Sciences (MATE)", faculty: "Institute of Environmental Sciences", city: "Gödöllő", url: "https://tempus.tpf.hu/studyfinder/index/show/255" },
+
+    { id: 8, title: "Engineering Management", subject: "Engineering Management", university: "University of Debrecen", faculty: "Faculty of Engineering", city: "Debrecen", url: "https://tempus.tpf.hu/studyfinder/index/show/536" },
+    { id: 9, title: "Environmental Engineering", subject: "Environmental Engineering", university: "University of Debrecen", faculty: "Faculty of Engineering", city: "Debrecen", url: "https://tempus.tpf.hu/studyfinder/index/show/540" },
+
+    { id: 10, title: "Geoinformatics", subject: "Geoinformatics", university: "University of Debrecen", faculty: "Faculty of Science and Technology", city: "Debrecen", url: "https://tempus.tpf.hu/studyfinder/index/show/581" },
+
+    { id: 11, title: "Environmental Engineering", subject: "Environmental Engineering", university: "University of Miskolc", faculty: "Faculty of Earth and Environmental Sciences and Engineering", city: "Miskolc", url: "https://tempus.tpf.hu/studyfinder/index/show/621" },
+
+    { id: 12, title: "Environmental Engineering", subject: "Environmental Engineering", university: "University of Pannonia", faculty: "Faculty of Engineering", city: "Veszprém", url: "https://tempus.tpf.hu/studyfinder/index/show/652" },
+
+    { id: 13, title: "Environmental Engineering", subject: "Environmental Engineering", university: "University of Sopron", faculty: "Faculty of Forestry", city: "Sopron", url: "https://tempus.tpf.hu/studyfinder/index/show/797" },
+
+    { id: 14, title: "Infrastructural Engineering", subject: "Infrastructural Engineering", university: "Széchenyi István University", faculty: "Faculty of Architecture, Civil Engineering and Transport", city: "Győr", url: "https://tempus.tpf.hu/studyfinder/index/show/468" },
+
+    { id: 15, title: "Geoinformatics", subject: "Geoinformatics", university: "University of Pécs", faculty: "Faculty of Sciences", city: "Pécs", url: "https://tempus.tpf.hu/studyfinder/index/show/713" },
+
+    { id: 16, title: "Geoinformatics", subject: "Geoinformatics", university: "Óbuda University", faculty: "Alba Regia Technical Faculty", city: "Székesfehérvár", url: "https://tempus.tpf.hu/studyfinder/index/show/373" },
+
+    { id: 17, title: "Geoinformatics", subject: "Geoinformatics", university: "University of Szeged", faculty: "Faculty of Science and Informatics", city: "Szeged", url: "https://tempus.tpf.hu/studyfinder/index/show/898" }
+  ];
+
+  // --- Helpers ---
+  const $ = sel => document.querySelector(sel);
+  const cards = $("#cards");
+  const q = $("#q");
+  const subject = $("#subject");
+  const university = $("#university");
+  const reset = $("#reset");
+  const count = $("#count");
+
+  // populate filters
+  const subjects = Array.from(new Set(programmes.map(p => p.subject))).sort();
+  subjects.forEach(s => subject.insertAdjacentHTML('beforeend', `<option value="${s}">${s}</option>`));
+  const universities = Array.from(new Set(programmes.map(p => p.university))).sort();
+  universities.forEach(u => university.insertAdjacentHTML('beforeend', `<option value="${u}">${u}</option>`));
+
+  const render = () => {
+    const term = q.value.trim().toLowerCase();
+    const s = subject.value;
+    const u = university.value;
+
+    const filtered = programmes.filter(p => {
+      const hit = (p.title + " " + p.university + " " + p.faculty + " " + p.city).toLowerCase().includes(term);
+      return hit && (s ? p.subject === s : true) && (u ? p.university === u : true);
+    });
+
+    count.textContent = `${filtered.length} programme${filtered.length === 1 ? '' : 's'} shown`;
+    cards.innerHTML = filtered.map(p => `
+      <article class="bg-white border rounded-2xl shadow-sm p-5 flex flex-col gap-3">
+        <div class="flex items-start justify-between gap-4">
+          <h3 class="font-semibold text-lg leading-snug">${p.title}</h3>
+          <span class="inline-flex items-center text-xs bg-slate-100 border rounded-full px-2 py-0.5">${p.subject}</span>
+        </div>
+        <div class="text-sm text-slate-600">
+          <div class="font-medium text-slate-800">${p.university}</div>
+          <div>${p.faculty}</div>
+          <div class="text-slate-500">${p.city}</div>
+        </div>
+        <div class="mt-1">
+          <a href="${p.url}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:underline">Official page ↗</a>
+        </div>
+      </article>
+    `).join("");
+  };
+
+  q.addEventListener('input', render);
+  subject.addEventListener('change', render);
+  university.addEventListener('change', render);
+  reset.addEventListener('click', () => { q.value = ""; subject.value = ""; university.value = ""; render(); });
+
+  // initial
+  document.getElementById('lastUpdated').textContent = new Date().toISOString().slice(0,10);
+  render();
+  </script>
+</body>
+</html>
